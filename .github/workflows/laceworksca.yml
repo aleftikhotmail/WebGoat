@@ -44,7 +44,7 @@ jobs:
           with:
             target: '${{ matrix.target }}'
             tools: sast
-            classes: '/WebGoat/target/webgoat-2023.9-SNAPSHOT.jar'
+            classes: /WebGoat/target/webgoat-2023.9-SNAPSHOT.jar
     display-results:
       runs-on: self-hosted
       name: Display results
