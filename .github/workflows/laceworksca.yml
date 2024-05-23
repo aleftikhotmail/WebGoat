@@ -5,16 +5,16 @@
   pull_request:
     branches:
       - main
-  workflow_dispatch: null
-  permissions:
+  workflow_dispatch:
+permissions:
     contents: read
     pull-requests: write
-  env:
+env:
     LW_ACCOUNT_NAME: '${{ secrets.LW_ACCOUNT_NAME }}'
     LW_API_KEY: '${{ secrets.LW_API_KEY }}'
     LW_API_SECRET: '${{ secrets.LW_API_SECRET }}'
     name: Lacework Code Analysis (PR)
-    jobs: null
+jobs:
     run-analysis:
       runs-on: self-hosted
       name: Run analysis
@@ -34,9 +34,9 @@
         - name: setup java
         - uses: actions/checkout@v4
         - uses: actions/setup-java@v4
-          with:
-            distribution: corretto
-            java-version: '22'
+            with:
+              distribution: corretto
+              java-version: '22'
           run: mvn install
         - name: Analyze
           uses: lacework/code-security-action@v1
