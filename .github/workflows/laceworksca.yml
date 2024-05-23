@@ -39,11 +39,11 @@ jobs:
               java-version: '22'
         - run: mvn install
         - name: Analyze
-          uses: lacework/code-security-action@v1
+        - uses: lacework/code-security-action@v1
           with:
             target: '${{ matrix.target }}'
             tools: sast
-            classes: ''
+            classes: '/WebGoat/target/webgoat-2023.9-SNAPSHOT.jar'
     display-results:
       runs-on: self-hosted
       name: Display results
