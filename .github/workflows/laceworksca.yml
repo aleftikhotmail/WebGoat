@@ -37,7 +37,7 @@ jobs:
           with:
               distribution: corretto
               java-version: '22'
-              run: mvn install
+        - run: mvn install
         - name: Analyze
           uses: lacework/code-security-action@v1
           with:
